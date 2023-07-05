@@ -4,8 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 <body>
-    
+    <form>
+        <div id="center">
+            <h4>Password Generator</h4>
+            <div id="first-container">
+                <input type="text" id="password" placeholder="P4$5W0rD!" readonly><br>
+                <img src="./images/copy.png" alt="error" id="copy" width="15px" height="19px" onclick="copied()" />
+            </div>
+            <div id="second-container">
+                <div class="slidecontainer">
+                    <div id="slider-value">
+                        <p>Character Length</p>
+                        <p>
+                            <span id="value">0</span>
+                        </p>
+                    </div>
+                    <input type="range" min="0" max="10" value="0" class="slider" id="myRange">
+                </div>
+                <div id="checkboxes">
+                    <input type="checkbox" id="uppercase">
+                    <label for="uppercase"> Include Uppercase Letters</label><br><br>
+                    <input type="checkbox" id="lowercase">
+                    <label for="lowercase"> Include Lowercase Letters</label><br><br>
+                    <input type="checkbox" id="numbers">
+                    <label for="numbers">Include Numbers</label><br><br>
+                    <input type="checkbox" id="symbols">
+                    <label for="symbols">Include Symbols</label><br><br>
+                </div>
+                <div id="strength">
+                    <p>STRENGTH</p>
+                    <div id="bars">
+                        <div id="bar1"></div>
+                        <div id="bar2"></div>
+                        <div id="bar3"></div>
+                        <div id="bar4"></div>
+                    </div>
+                </div>
+                <button type="button" id="generate">GENERATE &nbsp; <img src="./images/arrow.svg" alt="buttonpng"
+                        width="10px" height="10px" /></button>
+            </div>
+    </form>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
