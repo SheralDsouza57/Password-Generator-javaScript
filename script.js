@@ -156,3 +156,10 @@ button.addEventListener("click", function () {
     console.log(pass);
     document.getElementById('password').value += pass;
 });
+
+function copied() {
+    let copyPassword = document.getElementById("password");
+    copyPassword.select();
+    navigator.clipboard.writeText(copyPassword.value);
+    console.log("Copied the text: " + copyPassword.value);
+}
