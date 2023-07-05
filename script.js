@@ -114,3 +114,45 @@ function checkStrength() {
         bar4.style.backgroundColor = '#18171F';
     }
 }
+
+let button = document.getElementById('generate');
+button.addEventListener("click", function () {
+    document.getElementById('password').value = "";
+    document.getElementById('generate').value = "";
+    console.log(document.getElementById("myRange").value);
+    characterLength = slider.value
+    let low = "abcdefghijklmnopqrstuvwxyz";
+    let up = low.toUpperCase();
+    var num = '0123456789';
+    var sym = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
+    var pass = "";
+    if (characterLength >= bars[0] + bars[1] + bars[2] + bars[3]) {
+        if (bars[0] == 1) {
+            pass += up.charAt(Math.floor(Math.random() * up.length));
+            characterLength--;
+        }
+        if (bars[1] == 1) {
+            pass += low.charAt(Math.floor(Math.random() * low.length));
+            characterLength--;
+        }
+
+        if (bars[2] == 1) {
+            pass += num.charAt(Math.floor(Math.random() * num.length));
+
+            characterLength--;
+
+        }
+        if (bars[3] == 1) {
+            pass += sym.charAt(Math.floor(Math.random() * sym.length));
+
+            characterLength--;
+        }
+
+        for (var i = 0, n = low.length; i < characterLength; ++i) {
+            pass += low.charAt(Math.floor(Math.random() * n));
+        }
+    }
+    console.log(document.getElementById('password').value);
+    console.log(pass);
+    document.getElementById('password').value += pass;
+});
